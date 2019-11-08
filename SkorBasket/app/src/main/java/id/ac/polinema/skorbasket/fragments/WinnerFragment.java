@@ -71,5 +71,24 @@ public class WinnerFragment extends Fragment {
 				}
 			}
 		});
+
+		sharedScore.getWinner().observe(requireActivity(), new Observer<Boolean>() {
+			@Override
+			public void onChanged(Boolean winner) {
+				if (winner){
+					txtWinner.setText("Home Win");
+				} else{
+					txtWinner.setText("Visitor Win");
+				}
+			}
+		});
+
+		btnReset.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				sharedScore.setScoreVisitor(0);
+				sharedScore.setScoreHome(0);
+			}
+		});
 	}
 }
