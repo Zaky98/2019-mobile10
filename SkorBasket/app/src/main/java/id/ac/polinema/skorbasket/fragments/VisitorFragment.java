@@ -58,6 +58,14 @@ public class VisitorFragment extends Fragment {
 
 		// Tambahkan logic tombol di bagian bawah ini
 
+		sharedScore.getScoreVisitor().observe(requireActivity(), new Observer<Integer>() {
+			@Override
+			public void onChanged(Integer score) {
+				scoreVisitor.setText(String.valueOf(score));
+				scoreDefault = score;
+			}
+		});
+
 		scoreDuaVisitor.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
