@@ -19,4 +19,28 @@ public class SharedScore extends AndroidViewModel {
         scoreVisitor = new MutableLiveData<>();
         winner = new MutableLiveData<>();
     }
+
+    public MutableLiveData<Integer> getScoreHome() {
+        return scoreHome;
+    }
+
+    public void setScoreHome(MutableLiveData<Integer> scoreHome) {
+        this.scoreHome = scoreHome;
+    }
+
+    public MutableLiveData<Integer> getScoreVisitor() {
+        return scoreVisitor;
+    }
+
+    public void setScoreVisitor(MutableLiveData<Integer> scoreVisitor) {
+        this.scoreVisitor = scoreVisitor;
+    }
+
+    public MutableLiveData<Boolean> getWinner() {
+        return winner;
+    }
+
+    public void setWinner(MutableLiveData<Boolean> winner) {
+        this.winner = winner;
+    }
 }
